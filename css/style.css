@@ -1,0 +1,221 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+/*    Reset CSS  */
+* { margin:0;  padding:0; box-sizing:border-box;}
+ol,ul { list-style: none; }
+/* body {position:fixed;  width:100%; height:100%; background:#111;  font-family:orbitron; } */
+a { outline:0; text-decoration:none; color:#bbb;}
+img {border:0;}
+body { font-family:Orbitron }
+
+.wrap { position:fixed; width:100%; height:100%; background:#111;
+    perspective:900px;
+}
+
+.btnMenu {
+    position:fixed; top:50px; left: 40px;
+    font-size:40px; color:#fff;
+    animation:ani 0.5s infinite alternate;
+    z-index:9999;
+}
+@keyframes ani {
+    0% { transform:scale(1); opacity:1; color:#fff }
+    100% { transform:scale(1.5); opacity:0.8; color:#888 }
+}
+
+nav { position:fixed; width:150px; height:100%; 
+    background:#eee; transform:rotateY(120deg);
+    transform-origin:left center; opacity:0; 
+    transition:all 0.8s; z-index:999
+}
+nav.on { transform:rotateY(15deg); opacity:1; z-index:99999 } 
+
+nav h1 { width:100px; position:absolute; top:80px; left:50%; transform:translateX(-50%) }
+nav h1 img { width:100% }
+nav #gnb {
+    position:absolute; top:35%; left:0px; width:100%;
+}
+nav li a { display:block; width:100%;  font-size:18px; line-height:4; color:#000; text-align:center; }
+nav li a:hover { color:#fff;background:#000;}
+
+
+section { position:fixed; width:100%; height:100%; background:#555; transform-origin:right center;
+transition:all 0.8s; overflow:hidden; 
+}
+section.on { transform:rotateY(-10deg); }
+
+section > div { opacity: 0; position: absolute; top: 0; left: 0; 
+    width: 100%; height: 100%; z-index: 2; perspective: 700px; }
+section > div.on { opacity: 1; z-index: 3;}
+section > div > div { transform: rotateY(180deg); transition: all 1.5s; }
+section > div.on > div { transform: rotateY(0deg); }
+
+
+
+/* 전체 폰트사이즈 및 칼라 */
+section > div span { font-size: 20px; color: #eee;}
+section > div strong { font-size: 50px; color: #fff;}
+section > div em i  { font-size: 30px; color: #eee;
+    opacity: 0.5; transition: all 0.5s;
+}
+section > div em i:hover { transform: scale(1.2); opacity: 1;}
+
+
+
+/* box1부분 */
+
+section > .box1 { display:flex; flex-wrap:wrap; height:100%;  }
+section > .box1 div:nth-child(1) { width:50%; height:25%; background:#333;
+    display:flex; justify-content:center; align-items:center;
+}
+section > .box1 div:nth-child(2) { width:25%; height:25%; background:url(../img/m1.jpg) no-repeat center; background-size:cover  }
+section > .box1 div:nth-child(3) { width:25%; height:25%; background:#444;
+    font-size:30px; color:#eee; 
+    display:flex; justify-content:center; align-items:center; 
+}
+section > .box1 div:nth-child(3) em { margin:0 15px; }
+section > .box1 div:nth-child(4) { width:50%; height:50%;
+    display:flex; flex-wrap:wrap;
+}
+section > .box1 div:nth-child(4) p:nth-child(1) {
+    width:50%; height:50%; background:#888;
+    display:flex; justify-content:center; align-items:center; 
+}
+section > .box1 div:nth-child(4) p:nth-child(2) {
+    width:50%; height:50%; 
+    background:#fff url(../img/m3.jpg) no-repeat left center;
+    background-size:contain; 
+}
+section > .box1 div:nth-child(4) p:nth-child(3) {
+    width:50%; height:50%; 
+    background:url(../img/m4.jpg) no-repeat center;
+    background-size:cover; 
+}
+section > .box1 div:nth-child(4) p:nth-child(4) {
+    width:50%; height:50%; 
+}
+
+section > .box1 div:nth-child(5) { width:50%; height:50%;
+    background:url(../img/m2.jpg) no-repeat center; background-size:cover
+}
+section > .box1 div:nth-child(6) { width:33.33%; height:25%; background:#444;
+    font-size:20px; color:#eee; 
+    display:flex; justify-content:center; align-items:center; 
+}
+section > .box1 div:nth-child(7) { width:33.33%; height:25%; 
+    background:url(../img/m5.jpg) no-repeat center; background-size:cover
+}
+section > .box1 div:nth-child(8) { width:33.33%; height:25%;
+    background:#222;
+    font-size:20px; color:#eee; 
+    display:flex; justify-content:center; align-items:center; 
+}
+
+
+/* box2 부분*/
+
+section > .box2 { display:flex; flex-wrap:wrap; height:100%;  }
+
+section > .box2 div:nth-child(1) {
+    width:25%; height:25%; background:#444;
+    font-size:20px; color:#eee; 
+    /* 글자 중앙 정렬 */
+    display:flex; justify-content:center; align-items:center;   
+}
+section > .box2 div:nth-child(2) {
+    width:25%; height:25%; background:url(../img/w1.jpg) no-repeat center; background-size:cover
+}
+section > .box2 div:nth-child(3) {
+    width:50%; height:25%; background:#222; 
+    font-size:30px; color:#eee; 
+    display:flex; justify-content:center; align-items:center; 
+}
+
+section > .box2 div:nth-child(4){
+    width:25%; height:50%;background:url(../img/w2.jpg) no-repeat center; background-size:cover
+}
+section > .box2 div:nth-child(5){
+    width:50%; height:50%;background:url(../img/w3.jpg) no-repeat center; background-size:cover
+}
+
+section > .box2 div:nth-child(6){
+ width:25%; height:50%;  
+}
+
+section > .box2 div:nth-child(6) p:nth-child(1) {
+    height:50%;
+    background: url(../img/w4.jpg) no-repeat left center;
+    background-size:cover; 
+    
+}
+section > .box2 div:nth-child(6) p:nth-child(2) {
+    height:50%; 
+    background:#555; 
+    display:flex; justify-content:center; align-items:center; 
+}
+
+section > .box2 div:nth-child(7){
+    width:25%; height:25%; background:url(../img/w5.jpg) no-repeat center; background-size:cover
+}
+section > .box2 div:nth-child(8){
+    width:25%; height:25%;  background:#555; 
+    display:flex; justify-content:center; align-items:center;  
+}
+section > .box2 div:nth-child(9){
+    width:25%; height:25%; background:url(../img/w6.jpg) no-repeat center; background-size:cover
+}
+section > .box2 div:nth-child(10){
+    width:25%; height:25%; background:url(../img/w7.jpg) no-repeat center; background-size:cover
+}
+
+
+/* box3 부분*/
+
+section > .box3 { display:flex; flex-wrap:wrap; height:100%; }
+
+/* 왼쪽  부분*/
+section > .box3 .left {
+     width:50%; height:100%; background:url(../img/k1.jpg) no-repeat center; background-size:cover 
+}
+
+/* 오른쪽 부분 */
+section > .box3 .right{ width:50%; height:100%;}
+
+
+section > .box3 .right > div:nth-child(1){
+    display: flex; height: 25%;
+}
+
+section > .box3 .right > div:nth-child(1) p:nth-child(1){
+    width: 50%; height: 100%; background: #555;
+    display:flex; justify-content:center; align-items:center; 
+}
+section > .box3 .right > div:nth-child(1) p:nth-child(2){
+    width: 50%; height: 100%; background:url(../img/k2.jpg) no-repeat center; background-size:cover 
+}
+
+section > .box3 .right > div:nth-child(2){
+    height: 25%; background: #222;
+    display:flex; justify-content:center; align-items:center; 
+}
+
+section > .box3 .right > div:nth-child(3){
+    display: flex; height: 50%;
+}
+
+section > .box3 .right > div:nth-child(3) > div:nth-child(1){
+    width: 50%; background:url(../img/k3.jpg) no-repeat center; background-size:cover
+}
+
+section > .box3 .right > div:nth-child(3) > div:nth-child(2){
+    width: 50%; 
+}
+
+section > .box3 .right > div:nth-child(3) > div:nth-child(2) p:nth-child(1){
+    height: 50%; background: #777;  
+    display:flex; justify-content:center; align-items:center;  
+}
+section > .box3 .right > div:nth-child(3) > div:nth-child(2) p:nth-child(2){
+    height: 50%; background:url(../img/k4.jpg) no-repeat center; background-size:cover
+}
